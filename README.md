@@ -52,7 +52,7 @@ jobs:
   graph:
     runs-on: ubuntu-latest
     steps:
-      - uses: DeGraciaMathieu/what-moved@v4
+      - uses: DeGraciaMathieu/what-moved@v5
 ```
 
 | Input | Default | |
@@ -139,7 +139,7 @@ The same pull request now shows the new dependency from `Checkout` to `Cart`:
 For classes in `src/` under `Acme\`:
 
 ```yaml
-      - uses: DeGraciaMathieu/what-moved@v4
+      - uses: DeGraciaMathieu/what-moved@v5
         with:
           source: src
           namespace: Acme
@@ -157,4 +157,4 @@ The report is kept as an artifact of the run: the comment links it, and it opens
 
 ## Tests
 
-The tests of the analysis live in [what-moved-tests](https://github.com/DeGraciaMathieu/what-moved-tests), so that this repository holds no workflow and stays publishable on the GitHub Marketplace. They run the scripts from the outside, on code written in each test, on a small shop, and on [laravel.io](https://github.com/laravelio/laravel.io) at fixed commits, against the main branch of this repository every night.
+The analysis and its tests live in [what-moved-core](https://github.com/DeGraciaMathieu/what-moved-core), which this action installs at a fixed tag: this repository holds no workflow, so that it stays publishable on the GitHub Marketplace.
